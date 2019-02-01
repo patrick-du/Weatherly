@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+
+
+
+    <title>Weekly Weather Checker 🌡️</title>
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="row mt-3 justify-content-center">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle mx-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Location
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" id="toronto" href="#">Toronto</a>
+                    <a class="dropdown-item" id="paris" href="#">Paris</a>
+                    <a class="dropdown-item" id="seoul" href="#">Seoul</a>
+                    <a class="dropdown-item" id="melbourne" href="#">Melbourne</a>
+                    <a class="dropdown-item " id="current" href="#">Your Current Location</a>
+                </div>
+            </div>
+            <button type="button" class="btn mx-2" id="celsius">SI units</button>
+            <button type="button" class="btn mx-2" id="fahrenheit">Imperial units</button>
+        </div>
+        <hr>
+        <h1 class="title">Weekly Weather Checker 🌡️</h1>
+        <div class="row">
+            <div class="col mx-5">
+                <h5 class="special mx-auto">Location/Timezone: &nbsp </h5>
+                <h5 class="location-timezone mx-auto ">?</h5>
+                <br>
+                <h5 class="special mx-auto">Weekly Summary: &nbsp </h5>
+                <h5 class=" weekly-summary mx-auto">?</h5>
+            </div>
+        </div>
+        <br>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date0">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high0">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low0">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed0">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc0">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date1">Day 1</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high1">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low1">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip1">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid1">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed1">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc1">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date2">Day 2</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high2">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low2">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip2">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid2">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed2">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc2">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date3">Day 3</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high3">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low3">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip3">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid3">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed3">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc3">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date4">Day 4</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high4">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low4">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip4">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid4">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed4">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc4">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date5">Day 5</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high5">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low5">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip5">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid5">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed5">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc5">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="card mx-auto" style="width: 24rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="date6">Day 6</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto">High:&nbsp</p>
+                                <p class="mr-auto orange" id="high6">?</p>
+                            </div>
+                            <div class="row">
+                                <p class="ml-auto">Low:&nbsp</p>
+                                <p class="mr-auto orange" id="low6">?</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip6">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid6">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed6">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle mb-2 orange" id="desc6">Weather Summary</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/patrick-du" target="_blank">
+        <p class="text-center"> Created by Patrick Du 😶</p>
+    </a>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        //This is the service worker with the Cache-first network
+
+        //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+        if (navigator.serviceWorker.controller) {
+            console.log('[PWA Builder] active service worker found, no need to register')
+        } else {
+
+            //Register the ServiceWorker
+            navigator.serviceWorker.register('pwabuilder-sw.js', {
+                scope: './'
+            }).then(function (reg) {
+                console.log('Service worker has been registered for scope:' + reg.scope);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
 
     // Vars, Lets, Consts
-    const longlattoronto = "43.6529,-79.3849";
-    const longlatparis = "48.8566,2.3515";
-    const longlatseoul = "37.5667,126.9783";
-    const longlatmelbourne = "-37.8142,144.9632";
+    const latlongtoronto = "43.6529,-79.3849";
+    const latlongparis = "48.8566,2.3515";
+    const latlongseoul = "37.5667,126.9783";
+    const latlongmelbourne = "-37.8142,144.9632";
     let long, lat, coordinates;
     var units = 'si';
     var display = '°C';
@@ -12,19 +12,20 @@ window.addEventListener('load', () => {
 
     // Checks if location is already stored in local storage
     if (localStorage.longitude && localStorage.latitude) {
-        long = localStorage.getItem('longitude');
         lat = localStorage.getItem('latitude');
-        coordinates = `${long},${lat}`;
+        long = localStorage.getItem('longitude');
+        coordinates = `${lat},${long}`;
         change(coordinates, display);
+        console.log("hi", coordinates);
 
     } else {
         // If not, ask for location permissions
         navigator.geolocation.getCurrentPosition(position => {
-            long = position.coords.longitude;
             lat = position.coords.latitude;
+            long = position.coords.longitude;
             localStorage.setItem('longitude', long);
             localStorage.setItem('latitude', lat);
-            coordinates = `${long},${lat}`;
+            coordinates = `${lat},${long}`;
             change(coordinates, display);
         });
     };
@@ -45,29 +46,33 @@ window.addEventListener('load', () => {
 
     // Sets city coordinates and calls change function
     document.getElementById('current').addEventListener('click', () => {
-        long = localStorage.getItem('longitude');
         lat = localStorage.getItem('latitude');
-        coordinates = `${long},${lat}`;
+        long = localStorage.getItem('longitude');
+        coordinates = `${lat},${long}`;
         change(coordinates, display);
+        console.log("i", coordinates);
+
     });
 
     document.getElementById('toronto').addEventListener('click', () => {
-        coordinates = longlattoronto;
+        coordinates = latlongtoronto;
         change(coordinates, display);
+        console.log("hiasdf", coordinates);
+
     });
 
     document.getElementById('paris').addEventListener('click', () => {
-        coordinates = longlatparis;
+        coordinates = latlongparis;
         change(coordinates, display);
     });
 
     document.getElementById('seoul').addEventListener('click', () => {
-        coordinates = longlatseoul;
+        coordinates = latlongseoul;
         change(coordinates, display);
     });
 
     document.getElementById('melbourne').addEventListener('click', () => {
-        coordinates = longlatmelbourne;
+        coordinates = latlongmelbourne;
         change(coordinates, display);
     });
 

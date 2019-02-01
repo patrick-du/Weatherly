@@ -1,11 +1,12 @@
 {
-  "name": "Weekly Weather",
+  "name": "Weather Checker",
   "short_name": "Weather",
-  "theme_color": "#3498db",
-  "background_color": "#3498db",
+  "theme_color": "#20bf6b",
+  "background_color": "#20bf6b",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": ".",
+  "Scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

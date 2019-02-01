@@ -1,71 +1,96 @@
+/* Card Colours */
+.d0 {
+    background-color: #45aaf2;
+}
+
+.d1 {
+    background-color: #fc5c65;
+}
+
+.d2 {
+    background-color: #a55eea
+}
+
+.d3 {
+    background-color: #45aaf2;
+}
+
+.d4 {
+    background-color:#fc5c65;
+}
+
+.d5 {
+    background-color: #a55eea
+}
+
+.d6 {
+    background-color:#45aaf2;
+}
+
+/* Background Colour */
 body {
-    background-color: #f1f2f6;
+    background-color: #ecf0f1;
 }
 
-
-h4 {
-    color:#3498db;
-    font-size: 1.2rem;
+/* Card Day */
+h4, .special {
+    color: #ecf0f1;
+    font-size: 1.4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
-h5 {
-    color: #f39c12;
-    font-size: 1rem;
+/* Card Words */
+p {
+    color: #ecf0f1;
+    font-family: 'Lato', sans-serif;
 }
 
-.title {
-    color: #2d3436;
-    font-size: 2rem;
+.bigger {
+    font-size: 1.2em;
 }
 
+.boom {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/* Top Navigation Bar */
 .btn {
-    background-color:#3498db;
-    color:#FFFFFF;
+    background-color:#20bf6b;
+    color:#ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 .btn:hover {
-    color:#FFFFFF;
+    color:#ecf0f1;
 }
 
 .dropdown-item:hover {
-    background-color: #3498db;
-    color: #FFFFFF;
+    background-color: #20bf6b;
+    color: #ecf0f1;
 }
 
-.card {
-    background-color: #FFFFFF;
+/* Location/Timezone and Weekly Summary Colour */
+.xd-1 {
+    color: #3c4346;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
 }
-
-p {
+.xd-2 {
     color: #636e72;
+    font-family: 'Lato', sans-serif;
 }
 
-.special {
-    color: #3498db;
-}
-
-.title:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
-}
-
-.orange {
-    color: #f39c12 
+/* Title */
+.title {
+    color: #282d2e;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 
-@media (min-width: 576px) {
 
-}
-
-@media (min-width: 768px) {
-
-}
-
-@media (min-width: 992px) {
-
-}
-
-@media (min-width: 1200px) {
-
-}

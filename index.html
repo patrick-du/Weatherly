@@ -10,15 +10,16 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono|Roboto:400,500,700" rel="stylesheet">
 
 
 
-    <title>Weekly Weather Checker 🌡️</title>
+    <title>Weekly Weather Checker 🌈</title>
 </head>
 
 <body>
     <div class="container-fluid text-center">
-        <div class="row mt-3 justify-content-center">
+        <div class="row my-3 justify-content-center">
             <div class="dropdown">
                 <button class="btn dropdown-toggle mx-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -36,31 +37,30 @@
             <button type="button" class="btn mx-2" id="fahrenheit">Imperial units</button>
         </div>
         <hr>
-        <h1 class="title">Weekly Weather Checker 🌡️</h1>
+        <h1 class="title my-3">Weather Checker 🌡️</h1>
         <div class="row">
             <div class="col mx-5">
-                <h5 class="special mx-auto">Location/Timezone: &nbsp </h5>
-                <h5 class="location-timezone mx-auto ">?</h5>
-                <br>
-                <h5 class="special mx-auto">Weekly Summary: &nbsp </h5>
-                <h5 class=" weekly-summary mx-auto">?</h5>
+                <p class="mx-auto xd-1">Location/Timezone</p>
+                <p class="location-timezone mx-auto xd-2">?</p>
+                <p class="mx-auto xd-1">Weekly Summary</p>
+                <p class="weekly-summary mx-auto xd-2">?</p>
             </div>
         </div>
-        <br>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d0" style="width: 24rem;">
                 <div class="card-body">
                     <h4 class="card-title" id="date0">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high0">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high0">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low0">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low0">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -83,24 +83,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc0">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc0">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d1" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date1">Day 1</h4>
+                    <h4 class="card-title" id="date1">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high1">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high1">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low1">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low1">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -123,24 +124,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc1">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc1">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d2" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date2">Day 2</h4>
+                    <h4 class="card-title" id="date2">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high2">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high2">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low2">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low2">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -163,24 +165,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc2">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc2">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d3" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date3">Day 3</h4>
+                    <h4 class="card-title" id="date3">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high3">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high3">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low3">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low3">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -203,24 +206,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc3">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc3">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d4" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date4">Day 4</h4>
+                    <h4 class="card-title" id="date4">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high4">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high4">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low4">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low4">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -243,24 +247,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc4">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc4">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d5" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date5">Day 5</h4>
+                    <h4 class="card-title" id="date5">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high5">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high5">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low5">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low5">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -283,24 +288,25 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc5">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc5">Weather Summary</p>
                 </div>
             </div>
         </div>
         <div class="row my-3">
-            <div class="card mx-auto" style="width: 24rem;">
+            <div class="card mx-auto d6" style="width: 24rem;">
                 <div class="card-body">
-                    <h4 class="card-title" id="date6">Day 6</h4>
+                    <h4 class="card-title" id="date6">Day 0</h4>
                     <hr>
                     <div class="row">
                         <div class="col">
                             <div class="row">
-                                <p class="ml-auto">High:&nbsp</p>
-                                <p class="mr-auto orange" id="high6">?</p>
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high6">?</p>
                             </div>
+                            <hr>
                             <div class="row">
-                                <p class="ml-auto">Low:&nbsp</p>
-                                <p class="mr-auto orange" id="low6">?</p>
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low6">?</p>
                             </div>
                         </div>
                         <div class="col">
@@ -323,13 +329,13 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="card-subtitle mb-2 orange" id="desc6">Weather Summary</p>
+                    <p class="card-subtitle mb-2" id="desc6">Weather Summary</p>
                 </div>
             </div>
         </div>
-    </div>
+        
     <a href="https://github.com/patrick-du" target="_blank">
-        <p class="text-center"> Created by Patrick Du 😶</p>
+        <p class="text-center xd-2"> Created by Patrick Du 😶</p>
     </a>
 
     </div>

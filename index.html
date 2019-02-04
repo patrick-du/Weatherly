@@ -35,7 +35,6 @@
         </div>
         <hr>
 
-        <button class="ad2hs-prompt"> hi </button>
 
         <h1 class="title my-3">Weather Checker 🌡️</h1>
         <div class="row">
@@ -363,6 +362,8 @@
                 scope: './'
             }).then(function (reg) {
                 console.log('Service worker has been registered for scope:' + reg.scope);
+            }).catch(function(err) {
+                console.log('It did not register. This happened: ', err);
             });
         }
 

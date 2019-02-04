@@ -16,8 +16,7 @@ window.addEventListener('load', () => {
         long = localStorage.getItem('longitude');
         coordinates = `${lat},${long}`;
         change(coordinates, display);
-        console.log("hi", coordinates);
-
+        console.log('hi', coordinates);
     } else {
         // If not, ask for location permissions
         navigator.geolocation.getCurrentPosition(position => {

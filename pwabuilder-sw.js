@@ -17,7 +17,6 @@ self.addEventListener('install', function (evt) {
   }));
 });
 
-
 //allow sw to control of current page
 self.addEventListener('activate', function (event) {
   console.log('[PWA Builder] Claiming clients for current page');

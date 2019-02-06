@@ -95,14 +95,6 @@ p {
     color: white;
 }
 
-.github {
-    font-size: 17px;
-    color: white;
-}
-
-.github:hover{
-    color: #20bf6b;
-}
 /* Location/Timezone and Weekly Summary Colour */
 .xd-1 {
     color: #3c4346;

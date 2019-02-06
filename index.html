@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono|Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
     <title> Weather Checker 🌈</title>
     <!-- PushAlert -->
     <script type="text/javascript">
@@ -25,28 +28,29 @@
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="text-center">
         <div class="row my-3 justify-content-center">
             <div class="dropdown">
-                <button class="btn dropdown-toggle mx-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                <button class="btn dropdown-toggle mx-2 grow" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Location
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" id="toronto" href="#">Toronto</a>
-                    <a class="dropdown-item" id="paris" href="#">Paris</a>
-                    <a class="dropdown-item" id="seoul" href="#">Seoul</a>
-                    <a class="dropdown-item" id="melbourne" href="#">Melbourne</a>
-                    <a class="dropdown-item " id="current" href="#">Your Current Location</a>
+                    <a class="dropdown-item grow" id="toronto" href="#">Toronto</a>
+                    <a class="dropdown-item grow" id="paris" href="#">Paris</a>
+                    <a class="dropdown-item grow" id="seoul" href="#">Seoul</a>
+                    <a class="dropdown-item grow" id="melbourne" href="#">Melbourne</a>
+                    <a class="dropdown-item grow" id="current" href="#">Your Current Location</a>
                 </div>
             </div>
-            <button type="button" class="btn mx-2" id="celsius">SI units</button>
-            <button type="button" class="btn mx-2" id="fahrenheit">Imperial units</button>
+            <button type="button" class="btn mx-2 grow" id="celsius">SI units</button>
+            <button type="button" class="btn mx-2 grow" id="fahrenheit">Imperial units</button>
+            <button type="button" class="btn mx-2 grow"><a href="https://github.com/patrick-du" target="_blank" class="github"><ion-icon name="logo-github"></ion-icon></a></button>
         </div>
         <hr>
 
 
-        <h1 class="title my-3">Weather Checker 🌡️</h1>
+        <h1 class="title my-3 grow">Weather Checker 🌡️</h1>
         <div class="row">
             <div class="col mx-5">
                 <p class="mx-auto xd-1">Location/Timezone</p>
@@ -56,290 +60,288 @@
             </div>
         </div>
 
-        <div class="card mx-auto my-3 d0" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date0">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high0">?</p>
+
+        <div class="card-group">
+            <div class="card mx-auto my-3 d0">
+                <div class="card-body">
+                    <h4 class="card-title" id="date0">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high0">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low0">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low0">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip0">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid0">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed0">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed0">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc0">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc0">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d1" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date1">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high1">?</p>
+            <div class="card mx-auto my-3 d1">
+                <div class="card-body">
+                    <h4 class="card-title" id="date1">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high1">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low1">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low1">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip1">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid1">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed1">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip1">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid1">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed1">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc1">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc1">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d2" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date2">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high2">?</p>
+            <div class="card mx-auto my-3 d2">
+                <div class="card-body">
+                    <h4 class="card-title" id="date2">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high2">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low2">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low2">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip2">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid2">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed2">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip2">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid2">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed2">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc2">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc2">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d3" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date3">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high3">?</p>
+            <div class="card mx-auto my-3 d3">
+                <div class="card-body">
+                    <h4 class="card-title" id="date3">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high3">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low3">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low3">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip3">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid3">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed3">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip3">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid3">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed3">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc3">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc3">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d4" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date4">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high4">?</p>
+            <div class="card mx-auto my-3 d4">
+                <div class="card-body">
+                    <h4 class="card-title" id="date4">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high4">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low4">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low4">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip4">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid4">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed4">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip4">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid4">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed4">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc4">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc4">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d5" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date5">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high5">?</p>
+            <div class="card mx-auto my-3 d5">
+                <div class="card-body">
+                    <h4 class="card-title" id="date5">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high5">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low5">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low5">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip5">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid5">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed5">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip5">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid5">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed5">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc5">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc5">Weather Summary</p>
             </div>
-        </div>
 
-        <div class="card mx-auto my-3 d6" style="width: 24rem;">
-            <div class="card-body">
-                <h4 class="card-title" id="date6">Day 0</h4>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <p class="ml-auto bigger">High &nbsp</p>
-                            <p class="mr-auto boom" id="high6">?</p>
+            <div class="card mx-auto my-3 d6">
+                <div class="card-body">
+                    <h4 class="card-title" id="date6">Day 0</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="ml-auto bigger">High &nbsp</p>
+                                <p class="mr-auto boom" id="high6">?</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <p class="ml-auto bigger">Low:&nbsp</p>
+                                <p class="mr-auto boom " id="low6">?</p>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <p class="ml-auto bigger">Low:&nbsp</p>
-                            <p class="mr-auto boom " id="low6">?</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row card-text">
-                            <div class="col">
-                                <div class="row">
-                                    <p>Precipitation:&nbsp</p>
-                                    <p id="precip6">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Humidity:&nbsp</p>
-                                    <p id="humid6">? %</p>
-                                </div>
-                                <div class="row">
-                                    <p>Wind Speed:&nbsp</p>
-                                    <p id="speed6">? %</p>
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip6">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid6">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed6">? %</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <p class="card-subtitle mb-2" id="desc6">Weather Summary</p>
                 </div>
-                <hr>
-                <p class="card-subtitle mb-2" id="desc6">Weather Summary</p>
             </div>
         </div>
-
-
-        <a href="https://github.com/patrick-du" target="_blank">
-            <p class="text-center xd-2"> Created by Patrick Du 😶</p>
-        </a>
 
     </div>
 

@@ -43,6 +43,8 @@ window.addEventListener('load', () => {
         units = 'si';
         temperatureUnit = '°C'
         windSpeedUnit = ' km/h'
+        document.getElementById('item1').classList.add("active");
+        document.getElementById('item2').classList.remove("active");
         change(coordinates, units);
     });
 
@@ -50,6 +52,8 @@ window.addEventListener('load', () => {
         units = 'us';
         temperatureUnit = '°F'
         windSpeedUnit = ' mph'
+        document.getElementById('item2').classList.add("active");
+        document.getElementById('item1').classList.remove("active");
         change(coordinates, units);
     });
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -119,8 +123,6 @@ window.addEventListener('load', () => {
                 // Sets the weekly summary
                 document.querySelector(`.weekly-summary`).textContent = data.daily.summary
                 document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay");
-
-
 
 
                 // Sets the high/low and summary

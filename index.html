@@ -39,13 +39,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active" id="item1">
-                        <a class="nav-link" href="#" id="celsius">SI Units</a>
-                    </li>
-                    <li class="nav-item" id="item2">
-                        <a class="nav-link" href="#" id="fahrenheit">US Units</a>
-                    </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,6 +52,15 @@
                             <a class="dropdown-item " id="current" href="#">Your Current Location</a>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="resetLocation">Recalculate Location</a>
+                    </li>
+                    <li class="nav-item active" id="item1">
+                        <a class="nav-link" href="#" id="celsius">SI Units</a>
+                    </li>
+                    <li class="nav-item" id="item2">
+                        <a class="nav-link" href="#" id="fahrenheit">US Units</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -69,17 +71,15 @@
         <div class="row">
             <div class="col">
                 <p class="subtitle ">Location/Timezone</p>
-                <p class="location-timezone subtitleText">
-                    <div class="spinner-border" role="status" id="spinnerLocationTimezone">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </p>
+                <p class="subtitleText noDisplay" id="location-timezone"></p>
+                <div class="spinner-border" role="status" id="spinnerLocationTimezone">
+                    <span class="sr-only">Loading...</span>
+                </div>
                 <p class="subtitle ">Weekly Summary</p>
-                <p class="weekly-summary subtitleText">
-                    <div class="spinner-border" role="status" id="spinnerWeeklySummary">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </p>
+                <p class="subtitleText noDisplay" id="weekly-summary"></p>
+                <div class="spinner-border" role="status" id="spinnerWeeklySummary">
+                    <span class="sr-only">Loading...</span>
+                </div>
             </div>
         </div>
 
@@ -115,7 +115,7 @@
         </div>
         <!--Card End-->
         <!--Card Start-->
-        <div class="card my-3 p-1">
+        <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
                 <div class="spinner-border text-light" role="status" id="spinnerCard1">
                     <span class="sr-only">Loading...</span>
@@ -177,7 +177,7 @@
         </div>
         <!--Card End-->
         <!--Card Start-->
-        <div class="card my-3 p-1">
+        <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
                 <div class="spinner-border text-light" role="status" id="spinnerCard3">
                     <span class="sr-only">Loading...</span>
@@ -239,7 +239,7 @@
         </div>
         <!--Card End-->
         <!--Card Start-->
-        <div class="card my-3 p-1">
+        <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
                 <div class="spinner-border text-light" role="status" id="spinnerCard5">
                     <span class="sr-only">Loading...</span>
@@ -300,7 +300,10 @@
             </div>
         </div>
         <!--Card End-->
-        <p class="vert-move mt-4" style="font-weight:300;">Created by Patrick Du 🎈</p>
+        <a href="https://github.com/patrick-du" target="_blank" style="color: black; text-decoration: none;">
+            <p class="vert-move mt-4" style="font-weight:300;">Created by Patrick Du 🎈</p>
+        </a>
+
     </div>
 
     <!-- Optional JavaScript -->

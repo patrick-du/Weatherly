@@ -11,10 +11,7 @@ window.addEventListener('load', () => {
     var windSpeedUnit = ' km/h';
 
 
-
-
-
-    //--Switch between Celsius and Fahrenheit--------------------------------------------------------------------------------------------------------------------//
+    //--Stores Longitude and Latitude----------------------------------------------------------------------------------------------------------------------------//
 
     if (localStorage.longitude && localStorage.latitude) { // Checks if location is already stored in local storage
         lat = localStorage.getItem('latitude'); // Get longitude and latitude from localStorage
@@ -32,13 +29,21 @@ window.addEventListener('load', () => {
         });
     };
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-
-
     //--Switch between Celsius and Fahrenheit--------------------------------------------------------------------------------------------------------------------//
+    document.getElementById('resetLocation').addEventListener('click', () => {
+        navigator.geolocation.getCurrentPosition(position => {  // Asks for location permissions
+            lat = position.coords.latitude;
+            long = position.coords.longitude;
+            localStorage.setItem('longitude', long); // Set longitude and latitude into localStorage
+            localStorage.setItem('latitude', lat);
+            coordinates = `${lat},${long}`;
+            change(coordinates, units);
+            spinnerDisplay();
+        });
+    });
 
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
+    //--Switch between Celsius and Fahrenheit--------------------------------------------------------------------------------------------------------------------//
     document.getElementById('celsius').addEventListener('click', () => {
         units = 'si';
         temperatureUnit = '°C'
@@ -46,6 +51,8 @@ window.addEventListener('load', () => {
         document.getElementById('item1').classList.add("active");
         document.getElementById('item2').classList.remove("active");
         change(coordinates, units);
+        spinnerDisplay();
+
     });
 
     document.getElementById('fahrenheit').addEventListener('click', () => {
@@ -55,54 +62,57 @@ window.addEventListener('load', () => {
         document.getElementById('item2').classList.add("active");
         document.getElementById('item1').classList.remove("active");
         change(coordinates, units);
+        spinnerDisplay();
+
     });
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-
-
     //--Location Dropdown Buttons--------------------------------------------------------------------------------------------------------------------------------//
     document.getElementById('current').addEventListener('click', () => { // Change Coordinates for Toronto
         lat = localStorage.getItem('latitude');
         long = localStorage.getItem('longitude');
         coordinates = `${lat},${long}`;
-        change(coordinates, display);
+        change(coordinates, units);
+        spinnerDisplay();
+
     });
 
     document.getElementById('toronto').addEventListener('click', () => { // Change Coordinates for Toronto
         coordinates = latlongtoronto;
-        change(coordinates, display);
+        change(coordinates, units);
+        spinnerDisplay();
     });
 
     document.getElementById('paris').addEventListener('click', () => { // Change Coordinates for Toronto
         coordinates = latlongparis;
-        change(coordinates, display);
+        change(coordinates, units);
+        spinnerDisplay();
     });
 
     document.getElementById('seoul').addEventListener('click', () => { // Change Coordinates for Toronto
         coordinates = latlongseoul;
-        change(coordinates, display);
+        change(coordinates, units);
+        spinnerDisplay();
     });
 
     document.getElementById('melbourne').addEventListener('click', () => { // Change Coordinates for Toronto
         coordinates = latlongmelbourne;
-        change(coordinates, display);
+        change(coordinates, units);
+        spinnerDisplay();
     });
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------//
+    //--Function that displays Spinner when loading---------------------------------------------------------------------------------------------------------------//
+    function spinnerDisplay() {
+        for (let i = 0; i < 7; i++) {
+            document.getElementById(`loaded${i}`).classList.add("noDisplay"); // Show card information
+            document.getElementById(`spinnerCard${i}`).classList.remove("noDisplay"); // Hides spinners
+            document.getElementById(`spinnerLocationTimezone`).classList.add("noDisplay");
+            document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay");
+            document.getElementById(`location-timezone`).classList.remove("noDisplay");
+            document.getElementById(`weekly-summary`).classList.remove("noDisplay");
+        }
+    }
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-
-
-    //--DarkSky API Function that sets location/timezone --------------------------------------------------------------------------------------------------------//
-    //-------------------------------- weekly summary -----------------------------------------------------------------------------------------------------------//
-    //-------------------------------- daily high/low -----------------------------------------------------------------------------------------------------------//
-    //-------------------------------- daily summary ------------------------------------------------------------------------------------------------------------//
-    //-------------------------------- daily precipitation ------------------------------------------------------------------------------------------------------//
-    //-------------------------------- daily humidity -----------------------------------------------------------------------------------------------------------//
-    //-------------------------------- daily windspeed ----------------------------------------------------------------------------------------------------------//
-
+    //--DarkSky API Function that sets location/timezone, weekly summary, daily high/low, summary, precipitation, humidity, windspeed----------------------------//
     function change(coordinates, units) {
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -117,13 +127,10 @@ window.addEventListener('load', () => {
                 const dailyData = data.daily.data;
 
                 // Sets the location timezone
-                document.querySelector(`.location-timezone`).textContent = data.timezone
-                document.getElementById(`spinnerLocationTimezone`).classList.add("noDisplay");
+                document.getElementById(`location-timezone`).textContent = data.timezone
 
                 // Sets the weekly summary
-                document.querySelector(`.weekly-summary`).textContent = data.daily.summary
-                document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay");
-
+                document.getElementById(`weekly-summary`).textContent = data.daily.summary
 
                 // Sets the high/low and summary
                 for (let i = 0; i < 7; i++) {
@@ -133,29 +140,28 @@ window.addEventListener('load', () => {
                     document.getElementById(`precip${i}`).textContent = Math.round(dailyData[i].precipProbability * 100) + '%'; // Sets day precipitation
                     document.getElementById(`humid${i}`).textContent = Math.round(dailyData[i].humidity * 100) + '%'; // Sets day humidity
                     document.getElementById(`speed${i}`).textContent = dailyData[i].windSpeed + windSpeedUnit; // Sets day speed in km/h or mph
-
-                    document.getElementById(`spinnerCard${i}`).classList.add("noDisplay"); // Hides spinners
+                    document.getElementById(`spinnerCard${i}`).classList.add("noDisplay"); // Hides card spinners
                     document.getElementById(`loaded${i}`).classList.remove("noDisplay"); // Show card information
+                    document.getElementById(`spinnerLocationTimezone`).classList.add("noDisplay"); // Hide location/timezone spinner
+                    document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay"); // Hide weekly summary spinner
+                    document.getElementById(`location-timezone`).classList.remove("noDisplay"); // Show location/timezone spinner
+                    document.getElementById(`weekly-summary`).classList.remove("noDisplay"); // Show weekly summary spinner
                 }
 
                 // Sets the date
                 var dd = new Date().getDay();
                 datesArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
                 for (let i = 0; i < 7; i++) {
                     if (dd <= 6) {
                         document.querySelector(`#date${i}`).textContent = datesArray[dd];
                         dd++;
-
                     } else if (dd > 6) {
                         dd = 0;
                         document.querySelector(`#date${i}`).textContent = datesArray[dd];
                         dd++;
                     };
                 }
-
             });
     }
 });
-
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//

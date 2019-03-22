@@ -116,22 +116,45 @@ p {
     cursor:pointer;
 }
 
+/*Empty Display*/
+.noDisplay {
+    display: none;
+}
 
 /* Media Queries */
 @media (min-width: 576px) {
-.card-group {display: unset;}
-.card {width: 24rem;}
+    .card-group {
+        display: unset;
+    }
+    .card {
+        width: 24rem;
+    }
 }
 
 @media (min-width: 768px) {
-.card {width: 18rem; display: inline-block; vertical-align:top; margin: 10px 10px !important;}
+    .card {
+        width: 18rem;
+        display: inline-block; 
+        vertical-align:top; 
+        margin: 10px 10px !important;
+    }
 }
 
 @media (min-width: 992px) {
-.card {width: 18rem; display: inline-block; vertical-align:top; margin: 10px 10px !important;}
+    .card {
+        width: 18rem; 
+        display: inline-block; 
+        vertical-align:top; 
+        margin: 10px 10px !important;
+    }
 }
 
 @media (min-width: 1200px) {
-.card {width: 14rem; display: inline-block; vertical-align:top; margin: 10px 10px !important;}
+    .card {
+        width: 14rem; 
+        display: inline-block; 
+        vertical-align:top; 
+        margin: 10px 10px !important;
+    }
 
 }

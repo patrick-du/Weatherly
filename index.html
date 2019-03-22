@@ -6,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono|Roboto:400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
-    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 
-    <title> Weather Checker 🌈</title>
+    <title> Weather Checker</title>
+
     <!-- PushAlert -->
     <script type="text/javascript">
         (function (d, t) {
@@ -25,6 +25,7 @@
         }(document, "script"));
     </script>
     <!-- End PushAlert -->
+
 </head>
 
 <body>
@@ -32,9 +33,7 @@
         <div class="row my-3 justify-content-center">
             <div class="dropdown">
                 <button class="btn dropdown-toggle mx-2 " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Location
-                </button>
+                    aria-haspopup="true" aria-expanded="false">Location</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item " id="toronto" href="#">Toronto</a>
                     <a class="dropdown-item " id="paris" href="#">Paris</a>
@@ -46,21 +45,122 @@
             <button type="button" class="btn mx-2 " id="celsius">SI units</button>
             <button type="button" class="btn mx-2 " id="fahrenheit">Imperial units</button>
         </div>
-        <hr>
 
+        <hr>
 
         <h1 class="title my-3 ">Weather Checker 🌡️</h1>
         <div class="row">
             <div class="col mx-5">
                 <p class="mx-auto xd-1 ">Location/Timezone</p>
-                <p class="location-timezone mx-auto xd-2">?</p>
+                <p class="location-timezone mx-auto xd-2">
+                    <div class="spinner-border" role="status" id="spinnerLocationTimezone">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </p>
                 <p class="mx-auto xd-1 ">Weekly Summary</p>
-                <p class="weekly-summary mx-auto xd-2">?</p>
+                <p class="weekly-summary mx-auto xd-2">
+                    <div class="spinner-border" role="status" id="spinnerWeeklySummary">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </p>
             </div>
         </div>
 
+        <!--Test START-->
+        <div class="card mx-auto my-3 d0 ">
+            <div class="card-body">
 
-        <div class="card-group">
+                <h4 class="card-title" id="date0">Day 0</h4>
+                <hr>
+                <div class="spinner-border" role="status" id="spinnerCard0">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div id="loaded0" class="noDisplay">
+
+
+                    <div class="row">
+                        <div class="col">
+                            <p class="ml-auto">High</p>
+                            <p class="mr-auto" id="high0">?</p>
+                        </div>
+                        <div class="col">
+                            <p class="ml-auto">Low</p>
+                            <p class="mr-auto" id="low0">?</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="card-subtitle">Weather Summary</p>
+                    <p class="card-subtitle mb-2 mt-1" id="desc0">
+
+                    </p>
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="row card-text">
+                                <div class="col">
+                                    <div class="row">
+                                        <p>Precipitation:&nbsp</p>
+                                        <p id="precip0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Humidity:&nbsp</p>
+                                        <p id="humid0">? %</p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Wind Speed:&nbsp</p>
+                                        <p id="speed0">? %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+            </div>
+        </div>
+        <div class="card mx-auto my-3 d1 ">
+            <div class="card-body">
+                <h4 class="card-title" id="date1">Day 0</h4>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <p class="ml-auto bigger">High &nbsp</p>
+                            <p class="mr-auto boom" id="high1">?</p>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <p class="ml-auto bigger">Low:&nbsp</p>
+                            <p class="mr-auto boom " id="low1">?</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row card-text">
+                            <div class="col">
+                                <div class="row">
+                                    <p>Precipitation:&nbsp</p>
+                                    <p id="precip1">? %</p>
+                                </div>
+                                <div class="row">
+                                    <p>Humidity:&nbsp</p>
+                                    <p id="humid1">? %</p>
+                                </div>
+                                <div class="row">
+                                    <p>Wind Speed:&nbsp</p>
+                                    <p id="speed1">? %</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="card-subtitle mb-2" id="desc1">Weather Summary</p>
+            </div>
+        </div>
+        <!--Test END-->
+
+        <!-- <div class="card-group">
             <div class="card mx-auto my-3 d0 ">
                 <div class="card-body">
                     <h4 class="card-title" id="date0">Day 0</h4>
@@ -340,18 +440,21 @@
                     <p class="card-subtitle mb-2" id="desc6">Weather Summary</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="scripts/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <!-- Register Service Worker -->
     <script>

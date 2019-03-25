@@ -29,13 +29,16 @@ window.addEventListener('load', () => {
         });
     };
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
-    //--Switch between Celsius and Fahrenheit--------------------------------------------------------------------------------------------------------------------//
+    //--Recalculate Location Button------------------------------------------------------------------------------------------------------------------------------//
     document.getElementById('resetLocation').addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition(position => {  // Asks for location permissions
+            console.log(lat, long)
             lat = position.coords.latitude;
             long = position.coords.longitude;
             localStorage.setItem('longitude', long); // Set longitude and latitude into localStorage
             localStorage.setItem('latitude', lat);
+            console.log("got new position")
+            console.log(lat, long)
             coordinates = `${lat},${long}`;
             change(coordinates, units);
             spinnerDisplay();
@@ -63,8 +66,8 @@ window.addEventListener('load', () => {
         document.getElementById('item1').classList.remove("active");
         change(coordinates, units);
         spinnerDisplay();
-
     });
+
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Location Dropdown Buttons--------------------------------------------------------------------------------------------------------------------------------//
     document.getElementById('current').addEventListener('click', () => { // Change Coordinates for Toronto
@@ -103,12 +106,8 @@ window.addEventListener('load', () => {
     //--Function that displays Spinner when loading---------------------------------------------------------------------------------------------------------------//
     function spinnerDisplay() {
         for (let i = 0; i < 7; i++) {
+            document.getElementById(`loading${i}`).classList.add("noDisplay"); // Show card information
             document.getElementById(`loaded${i}`).classList.add("noDisplay"); // Show card information
-            document.getElementById(`spinnerCard${i}`).classList.remove("noDisplay"); // Hides spinners
-            document.getElementById(`spinnerLocationTimezone`).classList.add("noDisplay");
-            document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay");
-            document.getElementById(`location-timezone`).classList.remove("noDisplay");
-            document.getElementById(`weekly-summary`).classList.remove("noDisplay");
         }
     }
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -132,6 +131,9 @@ window.addEventListener('load', () => {
                 // Sets the weekly summary
                 document.getElementById(`weekly-summary`).textContent = data.daily.summary
 
+                document.getElementById(`topLoading`).classList.add("noDisplay"); // Hide topCard placeholder blocks
+                document.getElementById(`topLoaded`).classList.remove("noDisplay"); // Show topCard information
+
                 // Sets the high/low and summary
                 for (let i = 0; i < 7; i++) {
                     document.getElementById(`high${i}`).textContent = `${Math.round(dailyData[i].temperatureMax)} ${temperatureUnit}`; // Sets day high °C or °F
@@ -140,12 +142,9 @@ window.addEventListener('load', () => {
                     document.getElementById(`precip${i}`).textContent = Math.round(dailyData[i].precipProbability * 100) + '%'; // Sets day precipitation
                     document.getElementById(`humid${i}`).textContent = Math.round(dailyData[i].humidity * 100) + '%'; // Sets day humidity
                     document.getElementById(`speed${i}`).textContent = dailyData[i].windSpeed + windSpeedUnit; // Sets day speed in km/h or mph
-                    document.getElementById(`spinnerCard${i}`).classList.add("noDisplay"); // Hides card spinners
+
+                    document.getElementById(`loading${i}`).classList.add("noDisplay"); // Hide card placeholder blocks
                     document.getElementById(`loaded${i}`).classList.remove("noDisplay"); // Show card information
-                    document.getElementById(`spinnerLocationTimezone`).classList.add("noDisplay"); // Hide location/timezone spinner
-                    document.getElementById(`spinnerWeeklySummary`).classList.add("noDisplay"); // Hide weekly summary spinner
-                    document.getElementById(`location-timezone`).classList.remove("noDisplay"); // Show location/timezone spinner
-                    document.getElementById(`weekly-summary`).classList.remove("noDisplay"); // Show weekly summary spinner
                 }
 
                 // Sets the date

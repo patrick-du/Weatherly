@@ -30,65 +30,101 @@
 
 <body>
     <div class="container-fluid containerPadding text-center">
-        <nav class="navbar navbar-expand-lg navbar-light p-0 mt-3 mb-5">
-            <a class="navbar-brand" href="#">Weather Checker 🌡️</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div class="navCard mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light mt-4 mb-4">
+                <a class="navbar-brand" href="#">Weather Checker 🌡️</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Location
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " id="toronto" href="#">Toronto</a>
-                            <a class="dropdown-item " id="paris" href="#">Paris</a>
-                            <a class="dropdown-item " id="seoul" href="#">Seoul</a>
-                            <a class="dropdown-item " id="melbourne" href="#">Melbourne</a>
-                            <a class="dropdown-item " id="current" href="#">Your Current Location</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="resetLocation">Recalculate Location</a>
-                    </li>
-                    <li class="nav-item active" id="item1">
-                        <a class="nav-link" href="#" id="celsius">SI Units</a>
-                    </li>
-                    <li class="nav-item" id="item2">
-                        <a class="nav-link" href="#" id="fahrenheit">US Units</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-
-
-
-        <div class="row">
-            <div class="col">
-                <p class="subtitle ">Location/Timezone</p>
-                <p class="subtitleText noDisplay" id="location-timezone"></p>
-                <div class="spinner-border" role="status" id="spinnerLocationTimezone">
-                    <span class="sr-only">Loading...</span>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Location
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item " id="toronto" href="#">Toronto</a>
+                                <a class="dropdown-item " id="paris" href="#">Paris</a>
+                                <a class="dropdown-item " id="seoul" href="#">Seoul</a>
+                                <a class="dropdown-item " id="melbourne" href="#">Melbourne</a>
+                                <a class="dropdown-item " id="current" href="#">Your Current Location</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="resetLocation">Get Location</a>
+                        </li>
+                        <li class="nav-item active" id="item1">
+                            <a class="nav-link" href="#" id="celsius">SI Units</a>
+                        </li>
+                        <li class="nav-item" id="item2">
+                            <a class="nav-link" href="#" id="fahrenheit">US Units</a>
+                        </li>
+                        <li class="nav-item" id="item2">
+                            <a class="nav-link" href="https://github.com/patrick-du" target="_blank">
+                                Developer
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <p class="subtitle ">Weekly Summary</p>
-                <p class="subtitleText noDisplay" id="weekly-summary"></p>
-                <div class="spinner-border" role="status" id="spinnerWeeklySummary">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
+            </nav>
         </div>
+
+
+        <div class="topCard my-3 p-1 mx-auto">
+            <div class="card-body">
+                <div id="topLoading">
+                    <h4 class="fullBlock mx-auto"></h4>
+                    <h4 class="fullBlock mx-auto"></h4>
+                    <br />
+                    <h4 class="fullBlock mx-auto"></h4>
+                    <h4 class="fullBlock mx-auto"></h4>
+                </div>
+
+                <div id="topLoaded" class="noDisplay">
+                    <p class="subtitle">Location/Timezone</p>
+                    <p class="subtitleText" id="location-timezone"></p>
+                    <p class="subtitle">Weekly Summary</p>
+                    <p class="subtitleText" id="weekly-summary"></p>
+                </div>
+            </div>
+
+
+
+        </div>
+
 
         <!--Card Start-->
         <div class="card my-3 p-1">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard0">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading0">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
+
                 <div id="loaded0" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date0">Day 0</h4>
                     <hr>
@@ -117,8 +153,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard1">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading1">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded1" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date1">Day 1</h4>
@@ -148,8 +205,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard2">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading2">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded2" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date2">Day 2</h4>
@@ -179,8 +257,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard3">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading3">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded3" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date3">Day 3</h4>
@@ -210,8 +309,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard4">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading4">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded4" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date4">Day 4</h4>
@@ -241,8 +361,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1" style="background-color: #27ae60">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard5">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading5">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded5" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date5">Day 5</h4>
@@ -272,8 +413,29 @@
         <!--Card Start-->
         <div class="card my-3 p-1">
             <div class="card-body">
-                <div class="spinner-border text-light" role="status" id="spinnerCard6">
-                    <span class="sr-only">Loading...</span>
+                <div id="loading6">
+                    <h4 class="fullBlock"></h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                        <div class="col">
+                            <p class="fullBlock"></p>
+                            <p class="fullBlock"></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-left">
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <hr>
+                        <p class="fullBlock"></p>
+                        <p class="fullBlock"></p>
+                        <p class="largeBlock"></p>
+                    </div>
                 </div>
                 <div id="loaded6" class="noDisplay">
                     <h4 class="card-title dayStyle" id="date6">Day 6</h4>
@@ -300,9 +462,7 @@
             </div>
         </div>
         <!--Card End-->
-        <a href="https://github.com/patrick-du" target="_blank" style="color: black; text-decoration: none;">
-            <p class="vert-move mt-4" style="font-weight:300;">Created by Patrick Du 🎈</p>
-        </a>
+
 
     </div>
 

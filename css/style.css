@@ -11,16 +11,30 @@ hr {
 /* Top Info*/
 
 .subtitle {
+    color: white;
     font-weight: 400;
     font-size: 1.25em;
 }
 
 .subtitleText {
-    color: #2c3e50;
+    color :white;
     font-weight: 300;
 }
 
 /* Card */
+.navCard {
+    width: 95%;
+    border-radius: 15px ;
+    box-shadow: 0 0 20px #ccc;
+    background-color: white;
+}
+.topCard {
+    width: 95%;
+    border-radius: 15px ;
+    box-shadow: 0 0 20px #ccc;
+    background-color:#9b59b6;
+}
+
 .card {
     width: 100%;
     border-radius: 15px ;
@@ -68,6 +82,43 @@ hr {
     color: white;
 }
 
+.smallBlock {
+    background-color: #f0f5f7;
+    width: 20%;
+    height: 8px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+.mediumBlock {
+    background-color: #f0f5f7;
+    width: 40%;
+    height: 8px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+
+}
+.largeBlock {
+    background-color: #f0f5f7;
+    width: 75%;
+    height: 8px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+
+}
+
+.fullBlock {
+    background-color: #f0f5f7;
+    width: 100%;
+    height: 8px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+
+}
+
 /* Vert Move Animation */
 .vert-move {
     -webkit-animation: mover 1s infinite  alternate;
@@ -89,6 +140,12 @@ hr {
     .containerPadding {
         padding: 3rem;
     }
+    .topCard {
+        width: 100%;
+    }
+    .navCard {
+        width: 100%;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -102,6 +159,7 @@ hr {
         display: inline-flex;
         height: 28rem;
     }
+    
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -115,6 +173,7 @@ hr {
         display: inline-flex;
         height: 31rem;
     }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -128,6 +187,7 @@ hr {
         display: inline-flex;
         height: 28rem;
     }
+    
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -141,6 +201,7 @@ hr {
         display: inline-flex;
         height: 30rem;
     }
+  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -150,9 +211,10 @@ hr {
         padding-right: 3rem;
     }
     .card {
-        width: 12%;
-        margin: 1%;
+        width: 12.5%;
+        margin: 0.5%;
         display: inline-flex;
         height: 35rem;
     }
+   
 }

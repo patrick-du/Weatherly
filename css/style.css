@@ -81,24 +81,6 @@ hr {
     background-color: #20bf6b;
     color: white;
 }
-
-.smallBlock {
-    background-color: #f0f5f7;
-    width: 20%;
-    height: 8px; 
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-}
-.mediumBlock {
-    background-color: #f0f5f7;
-    width: 40%;
-    height: 8px; 
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-
-}
 .largeBlock {
     background-color: #f0f5f7;
     width: 75%;

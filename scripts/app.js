@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
 
+
     // Vars, Lets, Consts
     const latlongtoronto = "43.6529,-79.3849";
     const latlongparis = "48.8566,2.3515";
@@ -106,7 +107,9 @@ window.addEventListener('load', () => {
     //--Function that displays Spinner when loading---------------------------------------------------------------------------------------------------------------//
     function spinnerDisplay() {
         for (let i = 0; i < 7; i++) {
-            document.getElementById(`loading${i}`).classList.add("noDisplay"); // Show card information
+            document.getElementById(`topLoading`).classList.remove("noDisplay"); // Show card information
+            document.getElementById(`topLoaded`).classList.add("noDisplay"); // Show card information
+            document.getElementById(`loading${i}`).classList.remove("noDisplay"); // Show card information
             document.getElementById(`loaded${i}`).classList.add("noDisplay"); // Show card information
         }
     }
@@ -125,11 +128,8 @@ window.addEventListener('load', () => {
 
                 const dailyData = data.daily.data;
 
-                // Sets the location timezone
-                document.getElementById(`location-timezone`).textContent = data.timezone
-
-                // Sets the weekly summary
-                document.getElementById(`weekly-summary`).textContent = data.daily.summary
+                document.getElementById(`location-timezone`).textContent = data.timezone // Sets the location timezone
+                document.getElementById(`weekly-summary`).textContent = data.daily.summary // Sets the weekly summary
 
                 document.getElementById(`topLoading`).classList.add("noDisplay"); // Hide topCard placeholder blocks
                 document.getElementById(`topLoaded`).classList.remove("noDisplay"); // Show topCard information

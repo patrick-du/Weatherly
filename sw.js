@@ -10,17 +10,22 @@ self.addEventListener('install', function (e) {
 
 self.addEventListener('activate', function (e) {
     e.waitUntil(
-        caches.keys().then(function (keyList) {
-            return Promise.all(keyList.map(function (key) {
-                if (cacheName.indexOf(key) === -1) {
-                    return caches.delete(weatherlyPWA);
-                }
-            }));
+        caches.keys().then(function (names) {
+            for (let name of names)
+                caches.delete(name);
+            console.log('Cache was deleted' + name)
         })
+        // caches.keys().then(function (keyList) {
+        //     return Promise.all(keyList.map(function (key) {
+        //         if (cacheName.indexOf(key) === -1) {
+        //             return caches.delete(weatherlyPWA);
+        //         }
+        //     }));
+        // })
     );
 });
 
-var cacheName = 'weatherlyPWA-v1';
+var cacheName = 'weatherlyPWA-v3';
 var contentToCache = [
     '/index.html',
     '/css/style.css',

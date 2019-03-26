@@ -33,14 +33,17 @@ window.addEventListener('load', () => {
     //--Recalculate Location Button------------------------------------------------------------------------------------------------------------------------------//
     document.getElementById('resetLocation').addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition(position => {  // Asks for location permissions
-            console.log(lat, long)
-            lat = position.coords.latitude;
-            long = position.coords.longitude;
-            localStorage.setItem('longitude', long); // Set longitude and latitude into localStorage
-            localStorage.setItem('latitude', lat);
-            console.log("got new position")
-            console.log(lat, long)
-            coordinates = `${lat},${long}`;
+            navLat = position.coords.latitude;
+            navLong = position.coords.longitude;
+
+            if ((navLat = localStorage.getItem('latitude')) && (navLong = localStorage.getItem('longitude'))) {
+                console.log('They are the same.')
+            } else {
+                console.log('They are not the same.')
+                localStorage.setItem('latitude', navLat); // Set longitude and latitude into localStorage
+                localStorage.setItem('longitude', navLong);
+            }
+            coordinates = `${navLat},${navLong}`;
             change(coordinates, units);
             spinnerDisplay();
         });
@@ -71,13 +74,12 @@ window.addEventListener('load', () => {
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Location Dropdown Buttons--------------------------------------------------------------------------------------------------------------------------------//
-    document.getElementById('current').addEventListener('click', () => { // Change Coordinates for Toronto
+    document.getElementById('current').addEventListener('click', () => { // Change Coordinates for Current Location
         lat = localStorage.getItem('latitude');
         long = localStorage.getItem('longitude');
         coordinates = `${lat},${long}`;
         change(coordinates, units);
         spinnerDisplay();
-
     });
 
     document.getElementById('toronto').addEventListener('click', () => { // Change Coordinates for Toronto
@@ -86,19 +88,19 @@ window.addEventListener('load', () => {
         spinnerDisplay();
     });
 
-    document.getElementById('paris').addEventListener('click', () => { // Change Coordinates for Toronto
+    document.getElementById('paris').addEventListener('click', () => { // Change Coordinates for Paris
         coordinates = latlongparis;
         change(coordinates, units);
         spinnerDisplay();
     });
 
-    document.getElementById('seoul').addEventListener('click', () => { // Change Coordinates for Toronto
+    document.getElementById('seoul').addEventListener('click', () => { // Change Coordinates for Seoul
         coordinates = latlongseoul;
         change(coordinates, units);
         spinnerDisplay();
     });
 
-    document.getElementById('melbourne').addEventListener('click', () => { // Change Coordinates for Toronto
+    document.getElementById('melbourne').addEventListener('click', () => { // Change Coordinates for Melbourne
         coordinates = latlongmelbourne;
         change(coordinates, units);
         spinnerDisplay();

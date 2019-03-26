@@ -13,7 +13,6 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
-
     <title> Weatherly 🌡️</title>
 
     <!-- PushAlert -->
@@ -48,15 +47,15 @@
                                 Location
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item " id="current" href="#">Your Location</a>
                                 <a class="dropdown-item " id="toronto" href="#">Toronto</a>
                                 <a class="dropdown-item " id="paris" href="#">Paris</a>
                                 <a class="dropdown-item " id="seoul" href="#">Seoul</a>
                                 <a class="dropdown-item " id="melbourne" href="#">Melbourne</a>
-                                <a class="dropdown-item " id="current" href="#">Your Current Location</a>
+                                <hr />
+                                <a class="dropdown-item " id="resetLocation" href='#'>Recalculate Current Location</a>
+
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="resetLocation">Get Location</a>
                         </li>
                         <li class="nav-item" id="item1">
                             <a class="nav-link" href="#" id="celsius">SI Units</a>

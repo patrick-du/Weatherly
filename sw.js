@@ -13,7 +13,7 @@ self.addEventListener('activate', function (e) {
         caches.keys().then(function (keyList) {
             return Promise.all(keyList.map(function (key) {
                 if (cacheName.indexOf(key) === -1) {
-                    return caches.delete(key);
+                    return caches.delete(weatherlyPWA);
                 }
             }));
         })

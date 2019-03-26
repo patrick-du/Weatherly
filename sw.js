@@ -3,7 +3,7 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(cacheName).then(function (cache) {
             console.log('[Service Worker] Caching all: app shell and content');
-            return cache.addAll(appShellFiles);
+            return cache.addAll(contentToCache);
         })
     )
 })
@@ -15,13 +15,13 @@ self.addEventListener('activate', function (e) {
                 if (cacheName.indexOf(key) === -1) {
                     return caches.delete(key);
                 }
-            }))
+            }));
         })
-    )
+    );
 });
 
 var cacheName = 'weatherlyPWA';
-var appShellFiles = [
+var contentToCache = [
     '/index.html',
     '/css/style.css',
     '/scripts/app.js',
@@ -44,8 +44,8 @@ self.addEventListener('fetch', function (e) {
                     console.log('[Service Worker] Caching new resource: ' + e.request.url);
                     cache.put(e.request, response.clone());
                     return response;
-                })
-            })
+                });
+            });
         })
-    )
-})
+    );
+});

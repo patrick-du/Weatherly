@@ -25,7 +25,7 @@ self.addEventListener('activate', function (e) {
     );
 });
 
-var cacheName = 'weatherlyPWA-v5';
+var cacheName = 'weatherlyPWA';
 var contentToCache = [
     '/index.html',
     '/css/style.css',

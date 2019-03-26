@@ -27,7 +27,7 @@ self.addEventListener('activate', function (e) {
 
 var cacheName = 'weatherlyPWA';
 var contentToCache = [
-    '/index.html',
+    '/index.html?v1',
     '/css/style.css',
     '/scripts/app.js',
     '/images/icons/icon-72x72.png',

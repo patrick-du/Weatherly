@@ -11,9 +11,26 @@ window.addEventListener('load', () => {
     var temperatureUnit = '°C';
     var windSpeedUnit = ' km/h';
 
+    //--Checks if there is Internet Connection-------------------------------------------------------------------------------------------------------------------//
+    function isOnline() {
+        document.getElementById('status').innerHTML = "Online";
+        document.getElementById('status').classList.add("green");
+        document.getElementById('status').classList.remove("red");
 
+    }
+    function isOffline() {
+        document.getElementById('status').innerHTML = "Offline";
+        document.getElementById('status').classList.add("red");
+        document.getElementById('status').classList.remove("green");
+
+
+    }
+
+    window.addEventListener('online', isOnline);
+    window.addEventListener('offline', isOffline);
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Stores Longitude and Latitude----------------------------------------------------------------------------------------------------------------------------//
-
     if (localStorage.longitude && localStorage.latitude) { // Checks if location is already stored in local storage
         lat = localStorage.getItem('latitude'); // Get longitude and latitude from localStorage
         long = localStorage.getItem('longitude');
@@ -74,6 +91,7 @@ window.addEventListener('load', () => {
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Location Dropdown Buttons--------------------------------------------------------------------------------------------------------------------------------//
+    /*
     document.getElementById('current').addEventListener('click', () => { // Change Coordinates for Current Location
         lat = localStorage.getItem('latitude');
         long = localStorage.getItem('longitude');
@@ -81,6 +99,7 @@ window.addEventListener('load', () => {
         change(coordinates, units);
         spinnerDisplay();
     });
+    */
 
     document.getElementById('toronto').addEventListener('click', () => { // Change Coordinates for Toronto
         coordinates = latlongtoronto;
@@ -164,5 +183,7 @@ window.addEventListener('load', () => {
                 }
             });
     }
-});
+
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+});

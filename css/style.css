@@ -8,6 +8,13 @@ hr {
 .noDisplay {
     display: none;
 }
+.green {
+    color:#20bf6b !important;
+}
+
+.red {
+    color:#e74c3c !important;
+}
 /* Top Info*/
 
 .brandTitle {

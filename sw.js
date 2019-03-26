@@ -8,6 +8,18 @@ self.addEventListener('install', function (e) {
     )
 })
 
+self.addEventListener('activate', function (e) {
+    e.waitUntil(
+        caches.keys().then(function (keyList) {
+            return Promise.all(keyList.map(function (key) {
+                if (cacheName.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }))
+        })
+    )
+});
+
 var cacheName = 'weatherlyPWA';
 var appShellFiles = [
     '/index.html',

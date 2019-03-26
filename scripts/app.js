@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
     var units = 'si';
     var temperatureUnit = '°C';
     var windSpeedUnit = ' km/h';
-
     //--Checks if there is Internet Connection-------------------------------------------------------------------------------------------------------------------//
     function isOnline() {
         document.getElementById('status').innerHTML = "Online";

@@ -25,7 +25,6 @@ self.addEventListener('activate', function (e) {
     );
 });
 */
-
 self.addEventListener('activate', function (event) {
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
@@ -40,9 +39,9 @@ self.addEventListener('activate', function (event) {
     );
 });
 
-var cacheName = 'weatherlyPWA?v0';
+var cacheName = 'weatherlyPWA?v10';
 var contentToCache = [
-    '/index.html',
+    '/index.html?v10',
     '/css/style.css',
     '/scripts/app.js',
     '/images/icons/icon-72x72.png',

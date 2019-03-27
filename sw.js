@@ -25,19 +25,22 @@ self.addEventListener('activate', function (e) {
     );
 });
 */
-self.addEventListener('activate', function (e) {
-    e.waitUntil(
-        caches.keys().then(function (keyList) {
-            return Promise.all(keyList.map(function (key) {
-                if (cacheName.indexOf(key) === -1) {
-                    return caches.delete(key);
-                }
-            }));
+
+self.addEventListener('activate', function (event) {
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.filter(function (cacheName) {
+                    return true
+                }).map(function (cacheName) {
+                    return caches.delete(cacheName);
+                })
+            );
         })
     );
 });
 
-var cacheName = 'weatherlyPWA?v2';
+var cacheName = 'weatherlyPWA?v1';
 var contentToCache = [
     '/index.html',
     '/css/style.css',

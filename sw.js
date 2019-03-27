@@ -40,7 +40,7 @@ self.addEventListener('activate', function (event) {
     );
 });
 
-var cacheName = 'weatherlyPWA?v1';
+var cacheName = 'weatherlyPWA?v0';
 var contentToCache = [
     '/index.html',
     '/css/style.css',

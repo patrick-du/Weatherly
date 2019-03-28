@@ -1,4 +1,7 @@
 window.addEventListener('load', () => {
+    updateOnlineStatus();
+
+
 
     // Vars, Lets, Consts
     const latlongtoronto = "43.6529,-79.3849";
@@ -11,7 +14,7 @@ window.addEventListener('load', () => {
     let windSpeedUnit = ' km/h';
 
     //--Checks if there is Internet Connection-------------------------------------------------------------------------------------------------------------------//
-    
+
     function isOnline() {
         document.getElementById('status').innerHTML = "Online";
         document.getElementById('status').classList.add("green");
@@ -23,8 +26,21 @@ window.addEventListener('load', () => {
         document.getElementById('status').classList.remove("green");
     }
 
-    window.addEventListener('online', isOnline);
-    window.addEventListener('offline', isOffline);
+    function updateOnlineStatus() {
+        let condition = navigator.onLine ? "online" : "offline";
+        document.getElementById('status').innerHTML = condition
+
+        if (navigator.onLine) {
+            document.getElementById('status').classList.add("green");
+            document.getElementById('status').classList.remove("red");
+        } else {
+            document.getElementById('status').classList.add("red");
+            document.getElementById('status').classList.remove("green");
+        }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Stores Longitude and Latitude----------------------------------------------------------------------------------------------------------------------------//
@@ -59,7 +75,6 @@ window.addEventListener('load', () => {
     document.getElementById('resetLocation').addEventListener('click', () => { getUserLocation() }); // Current Location Button
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------//
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Switch between Celsius and Fahrenheit--------------------------------------------------------------------------------------------------------------------//
 
     document.getElementById('celsius').addEventListener('click', () => {
@@ -82,7 +97,7 @@ window.addEventListener('load', () => {
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--Function that displays/hides data-------------------------------------------------------------------------------------------------------------------------//
-    
+
     function hideData() {
         document.getElementById(`topLoading`).classList.remove("noDisplay"); // Show card information
         document.getElementById(`topLoaded`).classList.add("noDisplay"); // Show card information
@@ -102,8 +117,29 @@ window.addEventListener('load', () => {
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
+    //--Offline Sync---------------------------------------------------------------------------------------------------------------------------------------------//
+
+    function storeText() {
+        let stored = document.getElementById(`offlineText`).value;
+        console.log(stored)
+        localStorage.setItem('offlineMsg', stored);
+    }
+
+    document.getElementById(`offlineButton`).addEventListener('click', () => {
+        storeText();
+
+
+
+    });
+
+
+
+
+
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
     //--DarkSky API Function that sets location/timezone, weekly summary, daily high/low, summary, precipitation, humidity, windspeed----------------------------//
-    
+
     function change(coordinates, units) {
         hideData();
         const proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -146,7 +182,7 @@ window.addEventListener('load', () => {
                 displayData();
             });
     }
-    
+
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 });

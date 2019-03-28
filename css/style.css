@@ -77,14 +77,14 @@ hr {
     margin-left: 1%;
 }
 .btn {
-    background-color:#20bf6b;
+    background-color:#ff7675;
     color:white;
     border-radius: 15px;
-    border: 1px solid #20bf6b;
+    border: 1px solid #ff7675;
 }
 
 .btn:hover {
-    color:#20bf6b;
+    color:#ff7675;
     background-color: white;
 }
 
@@ -109,9 +109,11 @@ hr {
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 15px;
-
 }
 
+.form-control {
+    border-radius: 15px;
+}
 /* Media Queries */
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

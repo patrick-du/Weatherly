@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
     }
 
     function updateOnlineStatus() {
-        let condition = navigator.onLine ? "online" : "offline";
+        let condition = navigator.onLine ? "Online" : "Offline";
         document.getElementById('status').innerHTML = condition
 
         if (navigator.onLine) {
